@@ -13,8 +13,13 @@ public class Main {
         Matcher matcher = p.matcher(str); //- string der verglichen wird
         System.out.println(matcher.find());
 
+        List<String> passwordList = Aufgabe2.getInput("Input\\Aufg2_input1.txt");
         System.out.println(Aufgabe2.getInput("Input\\Aufg2_input1.txt"));
-        System.out.println(Aufgabe2.getParts("17-19 p: pwpzpfbrcpp"));
-
+        List<String> myList = Aufgabe2.getParts("17-19 p: pwpzpfbrcpppjppbmppp");
+        System.out.println(myList);
+        System.out.println(Aufgabe2.isValid(myList));
+        System.out.println(Aufgabe2.StringToList("hey"));
+        System.out.println(Aufgabe2.CountsOfValids(passwordList));
+        System.out.println(Aufgabe2.solve("Input\\Aufg2_input1.txt"));
     }
 }
