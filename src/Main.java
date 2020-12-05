@@ -15,25 +15,25 @@ public class Main {
         System.out.println(matcher.find());*/
 
         System.out.println("Aufgabe 2 - Part 1");
-        List<String> passwordList = Aufgabe2.getInput("Input\\Aufg2_input1.txt");
-        System.out.println(Aufgabe2.getInput("Input\\Aufg2_input1.txt"));
-        List<String> myList = Aufgabe2.getParts("17-19 p: pwpzpfbrcpppjppbmppp");
-        System.out.println(myList);
-        System.out.println(Aufgabe2.isValid(myList));
-        System.out.println(Aufgabe2.StringToList("hey"));
-        System.out.println(Aufgabe2.CountsOfValids(passwordList));
         System.out.println(Aufgabe2.solve("Input\\Aufg2_input1.txt"));
 
         System.out.println("Aufgabe 2 - Part 2");
-        System.out.println(Aufgabe2.checkLetter(Aufgabe2.StringToList("abcde"),1,3,"a"));
-        System.out.println(Aufgabe2.isValid2(Aufgabe2.getParts("1-3 a: abcde")));
-        System.out.println(Aufgabe2.CountsOfValids2(passwordList));
         System.out.println(Aufgabe2.solve2("Input\\Aufg2_input1.txt"));
 
-        System.out.println("\n "+ "Aufgabe 3 - Part 1");
-        System.out.println(Aufgabe3.getInputAsList("Input\\Aufg3_input1.txt"));
-        System.out.println(Aufgabe3.createInnerLists(Aufgabe3.getInputAsList("Input\\Aufg3_input1.txt")));
-        System.out.println(Aufgabe3.isTree("#"));
-        System.out.println(Aufgabe3.goThroughList(Aufgabe3.createInnerLists(Aufgabe3.getInputAsList("Input\\Aufg3_input1.txt"))));
+        System.out.println("Aufgabe 3 - Part 1");
+        System.out.println(Aufgabe3.solve("Input\\Aufg3_input1.txt"));
+
+        System.out.println("Aufgabe 3 - Part 2");
+        System.out.println(Aufgabe3.goThroughListVariable(Aufgabe3.createInnerLists(Aufgabe3.getInputAsList("Input\\Aufg3_input1.txt")), 3,1));
+        System.out.println(Aufgabe3.slope(Aufgabe3.createInnerLists(Aufgabe3.getInputAsList("Input\\Aufg3_input1.txt"))));
+        List<Integer> list = new LinkedList<>();
+        list.add(84);
+        list.add(198);
+        list.add(72);
+        list.add(81);
+        list.add(53);
+
+        System.out.println(Aufgabe3.multiplyListElements(list));
+        System.out.println(Aufgabe3.solve2("Input\\Aufg3_input1.txt"));
     }
 }
