@@ -29,5 +29,11 @@ public class Main {
         System.out.println(Aufgabe2.isValid2(Aufgabe2.getParts("1-3 a: abcde")));
         System.out.println(Aufgabe2.CountsOfValids2(passwordList));
         System.out.println(Aufgabe2.solve2("Input\\Aufg2_input1.txt"));
+
+        System.out.println("\n "+ "Aufgabe 3 - Part 1");
+        System.out.println(Aufgabe3.getInputAsList("Input\\Aufg3_input1.txt"));
+        System.out.println(Aufgabe3.createInnerLists(Aufgabe3.getInputAsList("Input\\Aufg3_input1.txt")));
+        System.out.println(Aufgabe3.isTree("#"));
+        System.out.println(Aufgabe3.goThroughList(Aufgabe3.createInnerLists(Aufgabe3.getInputAsList("Input\\Aufg3_input1.txt"))));
     }
 }
