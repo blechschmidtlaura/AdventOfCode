@@ -35,5 +35,7 @@ public class Main {
 
         System.out.println(Aufgabe3.multiplyListElements(list));
         System.out.println(Aufgabe3.solve2("Input\\Aufg3_input1.txt"));
+        //richtiges Ergebnis: 5140884672
+        System.out.println(Aufgabe3.multiply(list));
     }
 }

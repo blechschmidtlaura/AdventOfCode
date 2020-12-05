@@ -14,13 +14,19 @@ public class Aufgabe3 {
     }
 
     public static int multiplyListElements(List<Integer> list){
-        int value = 0;
-        for(int i = 0; i < list.size(); i++){
-            value = value + list.get(i);
-        }
         return list.stream().reduce(1, (a, b) -> a * b); //reduce to an int, identity: is used if the stream is empty, (a,b) - first element and next element in stream,
         //goes through the stream (the list) and takes out first and follow element, until the last element (where the next element ist the identity, a*b - what happens with the element
+    }
 
+    public static int multiply(List<Integer> list){
+        int i = list.size();
+        int elem = list.get(list.size()-1);
+        if(i > 1){
+            list.remove(list.size()-1);
+            return elem * multiply(list);
+        } else {
+            return list.get(0);
+        }
     }
 
     public static List<Integer> slope(List<List<String>> list){
