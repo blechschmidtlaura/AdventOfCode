@@ -12,5 +12,9 @@ public class Main {
         Pattern p = Pattern.compile("a.{2,4}");
         Matcher matcher = p.matcher(str); //- string der verglichen wird
         System.out.println(matcher.find());
+
+        System.out.println(Aufgabe2.getInput("Input\\Aufg2_input1.txt"));
+        System.out.println(Aufgabe2.getParts("17-19 p: pwpzpfbrcpp"));
+
     }
 }
