@@ -21,6 +21,49 @@ public class Aufgabe2 {
         Matcher matcher = p.matcher(passwort);
         return matcher.find();
     }*/
+    //- list mit passwort, stellen checken
+    //Aufgabenteil b
+
+    public static int solve2(String filename){
+        List<String> file = getInput(filename);
+        return CountsOfValids2(file);
+    }
+
+    public static int CountsOfValids2(List<String> passwordList){
+        int counter = 0;
+        for(int i = 0; i < passwordList.size(); i++){
+            List<String> partList = getParts(passwordList.get(i));
+            if(isValid2(partList)){
+                counter++;
+            }
+        }
+        return counter;
+    }
+
+
+    public static boolean isValid2(List<String> str){
+        String firstNumber = str.get(0);
+        String secondNumber = str.get(1);
+        String searchLetter = str.get(2);
+        String passwort = str.get(3);
+
+        List<Character> chrList = StringToList(passwort);
+        return checkLetter(chrList,Integer.valueOf(firstNumber),Integer.valueOf(secondNumber),searchLetter);
+    }
+
+    public static boolean checkLetter(List<Character> characterList, int firstNumber, int secondNumber, String searchLetter){
+        if(characterList.get(firstNumber-1) == searchLetter.charAt(0)){
+            if(characterList.get(secondNumber-1) != searchLetter.charAt(0)){
+                return true;
+            } else{
+                return false;
+            }
+        } else if(characterList.get(secondNumber-1) == searchLetter.charAt(0)){
+            return true;
+        }
+        return false;
+    }
+
     public static int solve(String filename){
         List<String> file = getInput(filename);
         return CountsOfValids(file);
