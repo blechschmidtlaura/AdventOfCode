@@ -59,6 +59,74 @@ public class Aufgabe4 {
     }
 
     //Part 2
+    public static int solve2(String file){
+        int counter = 0;
+        List<String> input = getInput(file);
+        for(int i = 0; i < input.size(); i++) {
+            System.out.println(input.get(i));
+            List<String> innerList = generatePassportList(input.get(i)); //because is invalid, if one key is missing (and you have to check because you compare with lists of all keys
+            if(isValid(innerList)) {
+                if (checkKeyValueList(keyValueList(input.get(i)))) {
+                    counter++;
+                }
+            }
+        }
+        return counter;
+    }
+
+    public static boolean checkKeyValueList(List<List<String>> passport1){
+        int correct_counter = 0;
+        String actual_value;
+        for(int i = 0; i < passport1.size(); i++){
+            actual_value = passport1.get(i).get(1);
+            if(passport1.get(i).get(0).equals("ecl")){
+                if(isEclCorrect(actual_value)){
+                    correct_counter++;
+                }
+            }
+            if(passport1.get(i).get(0).equals("eyr")){
+                if(isEyrCorrect(actual_value)){
+                    correct_counter++;
+                }
+            }
+            if(passport1.get(i).get(0).equals("hcl")){
+                if(isHclCorrect(actual_value)){
+                    correct_counter++;
+                }
+            }
+            if(passport1.get(i).get(0).equals("iyr")){
+                if(isIyrCorrect(actual_value)){
+                    correct_counter++;
+                }
+            }
+            if(passport1.get(i).get(0).equals("pid")){ //wrong
+                if(isPidCorrect(actual_value)){
+                    correct_counter++;
+                }
+            }
+            if(passport1.get(i).get(0).equals("hgt")){ //wrong
+                if(isHgtCorrect(actual_value)){
+                    correct_counter++;
+                }
+            }
+            if(passport1.get(i).get(0).equals("byr")){
+                if(isByrCorrect(actual_value)){
+                    correct_counter++;
+                }
+            }
+        }
+        return correct_counter == 7;
+    }
+
+    public static List<List<String>> keyValueList(String passport1){
+        List<List<String>> allKeyList = new LinkedList<>();
+        List<String> keys = getKeys();
+        for(int i = 0; keys.size() > i; i++){
+            allKeyList.add(getKeyValuePair(keys.get(i),passport1));
+        }
+        return allKeyList;
+    }
+
     public static boolean isEclCorrect(String value){
         List<String> values = new LinkedList<>();
         values.add("amb");
@@ -119,11 +187,11 @@ public class Aufgabe4 {
         }
     }
 
-    public static List<String> getKeyValuePair(String passport){
+    public static List<String> getKeyValuePair(String word, String passport){
         List<String> pair = new LinkedList<>();
         String key;
         String value;
-        Pattern p = Pattern.compile("([\\w]{3}):([\\w#]*)");
+        Pattern p = Pattern.compile("(["+word+"]{3}):([\\w#]*)");
         Matcher matcher = p.matcher(passport);
         if(matcher.find()) {
             key = matcher.group(1);
