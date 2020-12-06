@@ -26,5 +26,20 @@ public class Main {
         System.out.println("Aufgabe 3 - Part 2");
         //System.out.println(Aufgabe3.multiplyListElements(list));
         System.out.println(Aufgabe3.solve2("Input\\Aufg3_input1.txt"));
+
+        System.out.println("Aufgabe 4 - Part 1");
+        String expr = "hcl:#733820 hgt:175 eyr:2028 iyr:2011\n" +
+                "pid:87786389 ecl:hzl byr:1980";
+        System.out.println(Aufgabe4.generatePassportList(expr));
+        System.out.println(Aufgabe4.isValid(Aufgabe4.generatePassportList(expr)));
+        System.out.println(Aufgabe4.countValids(Aufgabe4.getInput("Input\\Aufg4_input1.txt")));
+
+        System.out.println(Aufgabe4.getKeyValuePair(expr));
+
+        System.out.println(Aufgabe4.isHgtCorrect("60in"));
+        System.out.println(Aufgabe4.isHclCorrect("#123abcd"));
+        System.out.println(Aufgabe4.isPidCorrect("1234567892"));
+
+
     }
 }
