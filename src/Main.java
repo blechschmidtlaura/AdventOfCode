@@ -24,18 +24,7 @@ public class Main {
         System.out.println(Aufgabe3.solve("Input\\Aufg3_input1.txt"));
 
         System.out.println("Aufgabe 3 - Part 2");
-        System.out.println(Aufgabe3.goThroughListVariable(Aufgabe3.createInnerLists(Aufgabe3.getInputAsList("Input\\Aufg3_input1.txt")), 3,1));
-        System.out.println(Aufgabe3.slope(Aufgabe3.createInnerLists(Aufgabe3.getInputAsList("Input\\Aufg3_input1.txt"))));
-        List<Integer> list = new LinkedList<>();
-        list.add(84);
-        list.add(198);
-        list.add(72);
-        list.add(81);
-        list.add(53);
-
-        System.out.println(Aufgabe3.multiplyListElements(list));
+        //System.out.println(Aufgabe3.multiplyListElements(list));
         System.out.println(Aufgabe3.solve2("Input\\Aufg3_input1.txt"));
-        //richtiges Ergebnis: 5140884672
-        System.out.println(Aufgabe3.multiply(list));
     }
 }

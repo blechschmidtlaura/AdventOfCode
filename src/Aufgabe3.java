@@ -7,18 +7,18 @@ import java.util.List;
 
 public class Aufgabe3 {
 
-    public static int solve2(String file){
+    public static long solve2(String file){
         List<String> input = getInputAsList(file);
         List <List<String>> completeList = createInnerLists(input);
-        return multiplyListElements(slope(completeList));
+        return multiply(slope(completeList));
     }
 
-    public static int multiplyListElements(List<Integer> list){
+    public static long multiplyListElements(List<Integer> list){ //just no long ...
         return list.stream().reduce(1, (a, b) -> a * b); //reduce to an int, identity: is used if the stream is empty, (a,b) - first element and next element in stream,
         //goes through the stream (the list) and takes out first and follow element, until the last element (where the next element ist the identity, a*b - what happens with the element
     }
 
-    public static int multiply(List<Integer> list){
+    public static long multiply(List<Integer> list){
         int i = list.size();
         int elem = list.get(list.size()-1);
         if(i > 1){
