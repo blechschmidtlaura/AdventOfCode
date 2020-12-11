@@ -43,21 +43,12 @@ public class Main {
         //System.out.println(Aufgabe4.solve2("Input\\Aufg4_input1.txt"));
 
         System.out.println("Aufgabe 5 - Part 1");
-        String bsp = "BFFFBBFRRR";
-        char[] arr = {'B','F','F','F','B','B','F'};
-        char[] arr2 = {'R', 'R', 'R'};
-        //System.out.println(Aufgabe5.lastStringOfArray(arr));
-        System.out.println(Aufgabe5.getValueInMiddle(63,0));
-        System.out.println(Aufgabe5.getID(arr,arr2));
-        String[] input = Input.getInputAsStringArray("Input\\Aufg5_input.txt");
-        String[][] myArray = Aufgabe5.getBoardingPasses(input);
-        for(int i = 0; i < myArray.length; i++) {
-            System.out.println(myArray[i][0]);
-            System.out.println(myArray[i][1]);
-        }
-        //System.out.println(Aufgabe5.solve("Input\\Aufg5_input.txt"));
-        System.out.println(Aufgabe5.boardingNumberList("Input\\Aufg5_input.txt"));
-
+        System.out.println(Aufgabe5.solve("Input\\Aufg5_input.txt"));
+        System.out.println("Aufgabe 5 - Part 2");
         System.out.println(Aufgabe5.findMySeat("Input\\Aufg5_input.txt"));
+
+        System.out.println("Aufgabe 6 - Part 1");
+        //System.out.println(Aufgabe6.getAnswers("Input\\Aufg6_input.txt"));
+        System.out.println(Aufgabe6.count("Input\\Aufg6_input.txt")); //does not work with test...
     }
 }

@@ -21,5 +21,16 @@ public class Input {
         return arrOfStr;
     }
 
+    public static String[] getInputAsStringArray2(String fileName) {
+        String actual = null;
+        try {
+            actual = readFile(fileName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String[] arrOfStr = actual.split("\n\n");
+        return arrOfStr;
+    }
+
 }
 
