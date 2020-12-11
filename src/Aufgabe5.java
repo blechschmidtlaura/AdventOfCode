@@ -1,12 +1,37 @@
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Aufgabe5 {
+
+    public static int findMySeat(String filename){
+        int distance = 0;
+        List<Integer> seatList = boardingNumberList(filename);
+        Collections.sort(seatList);
+        for(int i = 1; i+1 < seatList.size()-1; i++){
+            distance = seatList.get(i+1) - seatList.get(i);
+            if(distance >= 2){
+                return seatList.get(i) +1;
+            }
+        }
+        return 0;
+    }
+
+    public static List<Integer> boardingNumberList(String filename){
+        String[] stringArray = Input.getInputAsStringArray(filename);
+        String [] [] boardingArray = getBoardingPasses(stringArray);
+        List<Integer> boardingNumbers = new LinkedList<>();
+        for(int i = 0; i < boardingArray.length; i++){
+            boardingNumbers.add(getID(boardingArray[i][0].toCharArray(),boardingArray[i][1].toCharArray()));
+        }
+        return boardingNumbers;
+    }
 
     public static int solve(String filename){
         String[] stringArray = Input.getInputAsStringArray(filename);

@@ -55,6 +55,9 @@ public class Main {
             System.out.println(myArray[i][0]);
             System.out.println(myArray[i][1]);
         }
-        System.out.println(Aufgabe5.solve("Input\\Aufg5_input.txt"));
+        //System.out.println(Aufgabe5.solve("Input\\Aufg5_input.txt"));
+        System.out.println(Aufgabe5.boardingNumberList("Input\\Aufg5_input.txt"));
+
+        System.out.println(Aufgabe5.findMySeat("Input\\Aufg5_input.txt"));
     }
 }
