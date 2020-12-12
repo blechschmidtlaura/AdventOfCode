@@ -1,4 +1,5 @@
 import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -50,5 +51,14 @@ public class Main {
         System.out.println("Aufgabe 6 - Part 1");
         //System.out.println(Aufgabe6.getAnswers("Input\\Aufg6_input.txt"));
         System.out.println(Aufgabe6.count("Input\\Aufg6_input.txt")); //does not work with test...
+
+        System.out.println("Aufgabe 6 - Part 2");
+        List<String> first = Arrays.asList("a","b", "c");
+        List<String> second = Arrays.asList("a", "c");
+        List<String> third = Arrays.asList("a", "g");
+        List<String> fourth = Arrays.asList("b", "c","a");
+        List<List<String>> wholeList = Arrays.asList(first,second,third,fourth);
+        System.out.println(Aufgabe6.getIntersection(first, second));
+        System.out.println(Aufgabe6.getIntersections(wholeList));
     }
 }
