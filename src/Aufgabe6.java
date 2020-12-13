@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -23,7 +24,20 @@ public class Aufgabe6 {
     -- neue Liste adden (vorne) (list.add(0, newList)))
     -- aufrufen getIntersection mit list
 
+       --remove
+       --neue Liste
+       -- for-schleife
+       --if !i = index
+       --dann: füge hinzu
      */
+    /*public static int count2(String filename){
+        int counter = 0;
+        List<String> answers = getAnswers(filename);
+        for(int i = 0; i < answers.size(); i++){
+            counter = counter + getIntersections(answers.get(i)).size();
+        }
+        return counter;
+    }*/
 
     public static List<String> getIntersections(List<List<String>> answerList){
         List<String> newList;
@@ -33,8 +47,10 @@ public class Aufgabe6 {
             List<String> first = answerList.get(0);
             List<String> second = answerList.get(1);
             newList = getIntersection(first,second);
-
+            answerList = removeElemFromList(answerList,0);
+            answerList = removeElemFromList(answerList,0); //because elem2 is the first after removing elem1
             answerList.add(0,newList);
+            System.out.println(answerList.size());
             return getIntersections(answerList);
         }
     }
@@ -44,6 +60,16 @@ public class Aufgabe6 {
         for (int i = 0; i < firstList.size(); i++) {
             if(stringInList(secondList,firstList.get(i))){
                 newList.add(firstList.get(i));
+            }
+        }
+        return newList;
+    }
+
+    public static List<List<String>> removeElemFromList(List<List<String>> list, int index){
+        List<List<String>> newList = new LinkedList<>();
+        for (int i = 0; i < list.size(); i++) {
+            if(i != index){
+                newList.add(list.get(i));
             }
         }
         return newList;
@@ -78,6 +104,19 @@ public class Aufgabe6 {
             }
         }
         return false;
+    }
+
+    public static List<List<String>> getGroupsOfAnswers(String filename){
+        List<List<String>> newList = new LinkedList<>();
+        List<String> answers = getAnswers(filename);
+        for (int i = 0; i < answers.size(); i++) {
+            String group = answers.get(i);
+
+            String[] arr = group.split("\n");
+            List<String> groupList = Arrays.asList(arr);
+            newList.add(groupList);
+        }
+        return newList;
     }
 
     public static List<String> getAnswers(String filename){

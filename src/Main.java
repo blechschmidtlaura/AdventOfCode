@@ -60,5 +60,9 @@ public class Main {
         List<List<String>> wholeList = Arrays.asList(first,second,third,fourth);
         System.out.println(Aufgabe6.getIntersection(first, second));
         System.out.println(Aufgabe6.getIntersections(wholeList));
+        //System.out.println(Aufgabe6.removeElemFromList(wholeList,1));
+        System.out.println("------------------------------------");
+        System.out.println(Aufgabe6.getAnswers("Input\\Aufg6_test.txt"));
+        System.out.println(Aufgabe6.getGroupsOfAnswers("Input\\Aufg6_test.txt"));
     }
 }
