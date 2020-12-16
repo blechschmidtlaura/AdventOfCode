@@ -64,5 +64,9 @@ public class Main {
         System.out.println("------------------------------------");
         System.out.println(Aufgabe6.getAnswers("Input\\Aufg6_test.txt"));
         System.out.println(Aufgabe6.getGroupsOfAnswers("Input\\Aufg6_test.txt"));
+
+        System.out.println(Thinking.isPythagoras(17,12,20));
+        int[] date = new int[]{15,12,19};
+        Thinking.printPythagorasTriples(Thinking.calculateNextPythagorasDate(date));
     }
 }
