@@ -25,16 +25,6 @@ public class Input {
         return arrOfStr;
     }
 
-    /*public static String[] getInputAsStringArray2(String fileName) {
-        String actual = null;
-        try {
-            actual = readFile(fileName);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return actual.split("\n\n");
-    }*/
-
     public static String[] getInputAsStringArray2(String fileName) {
         Path filename = Path.of(fileName);
         String actual = null;
@@ -43,7 +33,6 @@ public class Input {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //System.out.println(actual);
         String[] arr = actual.split("\n\n");
         return arr;
     }
@@ -58,17 +47,6 @@ public class Input {
         }
         String[] arr = actual.split("\n\r");
         return arr;
-    }
-
-    public static List<String> getInputAsList2(String[] input){ //damit test funktioniert
-        List<String> listString = new ArrayList<>();
-        for(int i = 1; i < input.length; i++){
-            String mStr = input[i];
-            if(!mStr.equals(" ")) {
-                listString.add(mStr);
-            }
-        }
-        return listString;
     }
 
     public static List<String> getInputAsList(String[] input){

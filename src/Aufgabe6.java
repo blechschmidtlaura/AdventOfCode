@@ -4,34 +4,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Aufgabe6 {
-    /*
-    1. function, zwei Listen übergeben, Rückgabe: Liste mit Schnittmenge (was ist in beiden Listen enthalten)
-    -- newList deklarieren
-
-    --For-schleife (int i = 0; i < firstList.size(); i++)
-    -- Element der firstList (i), in der secondList (stringInList(secondList, firstList.get(i)))
-    --if(stringInList){ (die, die in beiden enthalten sind)
-    newList.add(firstList.get(i))
-    --etc.
-    --return newList
-
-    2. Länge der Liste --> Anzahl
-    3. okay
-    getIntersection(List<List<String>> list
-    ..neue Liste deklarien
-    -- solange Rekursiv bis list.size() = 1 (dann return mit erstem Element von list)
-    --zwei Listen vergleichen (ersten zwei Elemente der list)
-    --elemente remove (list.remove(list.get(0), list.get(1))
-    -- neue Liste adden (vorne) (list.add(0, newList)))
-    -- aufrufen getIntersection mit list
-
-       --remove
-       --neue Liste
-       -- for-schleife
-       --if !i = index
-       --dann: füge hinzu
-     */
-
     public static int count2(String filename){
         int counter = 0;
         List<List<String>> answers = getGroupsOfAnswers(filename);
@@ -46,7 +18,6 @@ public class Aufgabe6 {
         List<List<String>> newList = new LinkedList<>();
         for(int i = 0; i < list.size(); i++){
             newList.add(convertStringToCharList(list.get(i)));
-            //System.out.println(convertStringToCharList(list.get(i)));
         }
         return newList;
     }
@@ -149,10 +120,7 @@ public class Aufgabe6 {
     public static List<String> getAnswers(String filename){
         String[] arr = Input.getInputAsStringArray2(filename);
         List<String> answers = new LinkedList<>();
-        for(int i = 0; i < arr.length; i++){
-            String mStr = arr[i];
-            answers.add(mStr);
-        }
+        answers.addAll(Arrays.asList(arr));
         return answers;
     }
 }

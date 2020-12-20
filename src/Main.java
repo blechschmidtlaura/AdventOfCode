@@ -1,13 +1,6 @@
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.Arrays;
-import java.util.LinkedList;
+import Aufgabe7.*;
+
 import java.util.List;
-import java.util.jar.JarOutputStream;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Main {
     public static void main(String[] args) {
@@ -50,7 +43,7 @@ public class Main {
         System.out.println("Aufgabe 5 - Part 1");
         System.out.println(Aufgabe5.solve("Input\\Aufg5_input.txt"));
         System.out.println("Aufgabe 5 - Part 2");
-        System.out.println(Aufgabe5.findMySeat("Input\\Aufg5_input.txt"));*/
+        System.out.println(Aufgabe5.findMySeat("Input\\Aufg5_input.txt"));
 
         //System.out.println("Aufgabe 6 - Part 1");
         //System.out.println(Aufgabe6.getAnswers("Input\\Aufg6_input.txt"));
@@ -59,9 +52,12 @@ public class Main {
         System.out.println("Aufgabe 6 - Part 2");
         System.out.println(Aufgabe6.count2("Input\\Aufg6_input.txt"));
 
-        /*System.out.println(Thinking.isPythagoras(17,12,20));
+        System.out.println(Thinking.isPythagoras(17,12,20));
         int[] date = new int[]{15,12,19};
-        Thinking.printPythagorasTriples(Thinking.calculateNextPythagorasDate(date));*/
-        //System.out.println(Input.getInputAsList2(Input.getInputAsStringArray3("Input\\Aufg6_test.txt")));
+        Thinking.printPythagorasTriples(Thinking.calculateNextPythagorasDate(date));
+        //System.out.println(Input.getInputAsList2(Input.getInputAsStringArray3("Input\\Aufg6_test.txt"))); */
+        List<String> list = Aufgabe7.Solver.arrayToList(Aufgabe7.Solver.getInputAsStringArray("Input\\Aufg7_input.txt"));
+
+        System.out.println(Aufgabe7.Solver.getInput(list.get(3)));
     }
 }
