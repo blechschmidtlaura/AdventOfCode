@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -30,27 +31,53 @@ public class Aufgabe6 {
        --if !i = index
        --dann: füge hinzu
      */
-    /*public static int count2(String filename){
+
+    public static int count2(String filename){
         int counter = 0;
-        List<String> answers = getAnswers(filename);
+        List<List<String>> answers = getGroupsOfAnswers(filename);
         for(int i = 0; i < answers.size(); i++){
-            counter = counter + getIntersections(answers.get(i)).size();
+            List<List<String>> innerList = listWithInner(answers.get(i));
+            counter = counter + getIntersections(innerList).size();
         }
         return counter;
-    }*/
+    }
+
+    public static List<List<String>> listWithInner(List<String > list){
+        List<List<String>> newList = new LinkedList<>();
+        for(int i = 0; i < list.size(); i++){
+            newList.add(convertStringToCharList(list.get(i)));
+            //System.out.println(convertStringToCharList(list.get(i)));
+        }
+        return newList;
+    }
+
+    public static List<String> convertStringToCharList(String str) {
+        // Create an empty List of character
+        List<String> chars = new ArrayList<>();
+
+        // For each character in the String
+        // add it to the List
+        for (char ch : str.toCharArray()) {
+
+            chars.add(String.valueOf(ch));
+        }
+
+        // return the List
+        return chars;
+    }
 
     public static List<String> getIntersections(List<List<String>> answerList){
         List<String> newList;
         if(answerList.size() <= 1){
             return answerList.get(0);
         } else{
+
             List<String> first = answerList.get(0);
             List<String> second = answerList.get(1);
             newList = getIntersection(first,second);
             answerList = removeElemFromList(answerList,0);
             answerList = removeElemFromList(answerList,0); //because elem2 is the first after removing elem1
             answerList.add(0,newList);
-            System.out.println(answerList.size());
             return getIntersections(answerList);
         }
     }
@@ -85,7 +112,7 @@ public class Aufgabe6 {
         return counter;
     }
 
-    public static List<String> listOfGroupanswers(String string){
+    public static List<String> listOfGroupanswers(String string){ //Part1
         List<String> groupAnswers = new LinkedList<>();
         for(int i = 0; i < string.length(); i++){
             String letter = String.valueOf(string.charAt(i));
@@ -106,7 +133,7 @@ public class Aufgabe6 {
         return false;
     }
 
-    public static List<List<String>> getGroupsOfAnswers(String filename){
+    public static List<List<String>> getGroupsOfAnswers(String filename){ //Part2
         List<List<String>> newList = new LinkedList<>();
         List<String> answers = getAnswers(filename);
         for (int i = 0; i < answers.size(); i++) {

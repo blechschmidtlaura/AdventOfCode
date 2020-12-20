@@ -1,6 +1,10 @@
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.StringReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Input {
     public static String readFile(String filename) throws IOException {
@@ -21,15 +25,59 @@ public class Input {
         return arrOfStr;
     }
 
-    public static String[] getInputAsStringArray2(String fileName) {
+    /*public static String[] getInputAsStringArray2(String fileName) {
         String actual = null;
         try {
             actual = readFile(fileName);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String[] arrOfStr = actual.split("\n\n");
-        return arrOfStr;
+        return actual.split("\n\n");
+    }*/
+
+    public static String[] getInputAsStringArray2(String fileName) {
+        Path filename = Path.of(fileName);
+        String actual = null;
+        try {
+            actual = Files.readString(filename);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //System.out.println(actual);
+        String[] arr = actual.split("\n\n");
+        return arr;
+    }
+
+    public static String[] getInputAsStringArray3(String fileName) { //damit test funktioniert
+        Path filename = Path.of(fileName);
+        String actual = null;
+        try {
+            actual = Files.readString(filename);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String[] arr = actual.split("\n\r");
+        return arr;
+    }
+
+    public static List<String> getInputAsList2(String[] input){ //damit test funktioniert
+        List<String> listString = new ArrayList<>();
+        for(int i = 1; i < input.length; i++){
+            String mStr = input[i];
+            if(!mStr.equals(" ")) {
+                listString.add(mStr);
+            }
+        }
+        return listString;
+    }
+
+    public static List<String> getInputAsList(String[] input){
+        List<String> listString = new ArrayList<>();
+        for(int i = 0; i < input.length; i++){
+            String mStr = input[i];
+            listString.add(mStr);
+        }
+        return listString;
     }
 
 }
